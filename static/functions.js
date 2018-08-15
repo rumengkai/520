@@ -135,3 +135,15 @@ function adjustCodePosition() {
 function showLoveU() {
 	$('#loveu').fadeIn(3000);
 }
+
+
+
+window.onload=function () {
+  var audio = document.getElementById('audio-source');
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+			audio.play();
+		});
+	}, false);
+	audio.play();
+}
